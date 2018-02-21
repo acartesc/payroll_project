@@ -58,7 +58,7 @@
 
   <div class="field">
     <%= form.label :address_region %>
-    <%= form.text_field :address_region, id: :worker_address_region %>
+    <%= form.select :address_region, ['Metropolitana de Santiago', 'XV de Arica y Parinacota', 'I de Tarapacá', 'II de Antofagasta', 'III de Atacama', 'IV de Coquimbo', 'V de Valparaíso', "VI del Libertador General Bernardo O'Higgins", 'VII del Maule', 'VII del Bío Bío', 'IX de la Araucanía', 'XIV de los Ríos', 'X de los Lagos', '	XI Aisén del General Carlos Ibáñez del Campo', 'XII de Magallanes y Antártica Chilena'], id: :worker_address_region %>
   </div>
 
   <div class="field">
