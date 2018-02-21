@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Workers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rut</th>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Last name1</th>
+      <th>Last name2</th>
+      <th>Bithdate</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address region</th>
+      <th>Address city</th>
+      <th>Address street</th>
+      <th>Address number</th>
+      <th>Address apartment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workers.each do |worker| %>
+      <tr>
+        <td><%= worker.rut %></td>
+        <td><%= worker.first_name %></td>
+        <td><%= worker.middle_name %></td>
+        <td><%= worker.last_name1 %></td>
+        <td><%= worker.last_name2 %></td>
+        <td><%= worker.bithdate %></td>
+        <td><%= worker.gender %></td>
+        <td><%= worker.email %></td>
+        <td><%= worker.phone %></td>
+        <td><%= worker.address_region %></td>
+        <td><%= worker.address_city %></td>
+        <td><%= worker.address_street %></td>
+        <td><%= worker.address_number %></td>
+        <td><%= worker.address_apartment %></td>
+        <td><%= link_to 'Show', worker %></td>
+        <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
+        <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Worker', new_worker_path %>
