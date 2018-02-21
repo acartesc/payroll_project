@@ -17,67 +17,67 @@
   </div>
 
   <div class="field">
-    <%= form.label :first_name %>
+    <%= form.label :Nombre %>
     <%= form.text_field :first_name, id: :worker_first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :middle_name %>
+    <%= form.label :'Segundo nombre' %>
     <%= form.text_field :middle_name, id: :worker_middle_name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name1 %>
+    <%= form.label :'Primer apellido' %>
     <%= form.text_field :last_name1, id: :worker_last_name1 %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name2 %>
+    <%= form.label :'Segundo apellido' %>
     <%= form.text_field :last_name2, id: :worker_last_name2 %>
   </div>
 
   <div class="field">
-    <%= form.label :bithdate %>
+    <%= form.label :'Fecha de nacimiento' %>
     <%= form.date_select :birthdate, :order => [:day, :month, :year], :start_year => 1900, id: :worker_birthdate %>
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender, id: :worker_gender %>
+    <%= form.label :'Sexo' %>
+    <%= form.select :gender, ['Masculino', 'Femenino'], id: :worker_gender %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :Email %>
     <%= form.text_field :email, id: :worker_email %>
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
+    <%= form.label :Teléfono %>
     <%= form.text_field :phone, id: :worker_phone %>
   </div>
 
   <div class="field">
-    <%= form.label :address_region %>
+    <%= form.label :Región %>
     <%= form.select :address_region, ['Metropolitana de Santiago', 'XV de Arica y Parinacota', 'I de Tarapacá', 'II de Antofagasta', 'III de Atacama', 'IV de Coquimbo', 'V de Valparaíso', "VI del Libertador General Bernardo O'Higgins", 'VII del Maule', 'VII del Bío Bío', 'IX de la Araucanía', 'XIV de los Ríos', 'X de los Lagos', '	XI Aisén del General Carlos Ibáñez del Campo', 'XII de Magallanes y Antártica Chilena'], id: :worker_address_region %>
   </div>
 
   <div class="field">
-    <%= form.label :address_city %>
+    <%= form.label :Comuna %>
     <%= form.text_field :address_city, id: :worker_address_city %>
   </div>
 
   <div class="field">
-    <%= form.label :address_street %>
+    <%= form.label :Calle %>
     <%= form.text_field :address_street, id: :worker_address_street %>
   </div>
 
   <div class="field">
-    <%= form.label :address_number %>
+    <%= form.label :Número %>
     <%= form.text_field :address_number, id: :worker_address_number %>
   </div>
 
   <div class="field">
-    <%= form.label :address_apartment %>
+    <%= form.label :'Depto / Casa' %>
     <%= form.text_field :address_apartment, id: :worker_address_apartment %>
   </div>
 
