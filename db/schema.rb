@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221024054) do
+ActiveRecord::Schema.define(version: 20180307231014) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string "taxpayer_id_company"
+    t.string "business_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taxpayer_id_companies", force: :cascade do |t|
+    t.string "business_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "workers", force: :cascade do |t|
     t.string "rut"
@@ -29,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180221024054) do
     t.string "address_apartment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "company_id"
+    t.index ["company_id"], name: "index_workers_on_company_id"
   end
 
 end
