@@ -10,5 +10,29 @@
   <%= @client.client_rut %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Crear Empresa', new_client_company_path(@client) %>
+
+<%= link_to 'Editar', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Taxpayer id company</th>
+      <th>Business name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client.companies.each do |company| %>
+      <tr>
+        <td><%= company.taxpayer_id_company %></td>
+        <td><%= company.business_name %></td>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
