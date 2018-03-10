@@ -1,4 +1,4 @@
 class Company < ApplicationRecord
-  has_many :workers 
-
+  belongs_to :client
+  has_many :workers
 end

@@ -68,9 +68,9 @@ class WorkersController < ApplicationController
       @worker = Worker.find(params[:id])
     end
 
-    def set_company
-      @company = Company.find(params[:id])
-    end
+    # def set_company
+    #   @company = Company.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
