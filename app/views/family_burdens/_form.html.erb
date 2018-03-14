@@ -1,0 +1,27 @@
+<%= form_with(model: family_burden, url: worker_family_burdens_path(params[:worker_id])) do |form| %>
+  <% if family_burden.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(family_burden.errors.count, "error") %> prohibited this family_burden from being saved:</h2>
+
+      <ul>
+      <% family_burden.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rut %>
+    <%= form.text_field :rut, id: :family_burden_rut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :family_burden_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

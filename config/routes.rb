@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
 
   root to: "clients#index"
-  resources :workers
-  #VER qué se necesita mostrar de workers para hacer only
+  resources :workers do
+    resources :family_burdens
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

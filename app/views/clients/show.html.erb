@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre Cliente:</strong>
   <%= @client.name %>
 </p>
 
 <p>
-  <strong>Client rut:</strong>
+  <strong>Rut Cliente:</strong>
   <%= @client.client_rut %>
 </p>
-
+<br>
 <%= link_to 'Crear Empresa', new_client_company_path(@client) %>
 
 <%= link_to 'Editar', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Volver', clients_path %>
 
 <table>
   <thead>
     <tr>
-      <th>Taxpayer id company</th>
-      <th>Business name</th>
+      <th>Rut Empresa</th>
+      <th>Nombre Empresa</th>
       <th colspan="3"></th>
     </tr>
   </thead>

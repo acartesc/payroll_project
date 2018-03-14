@@ -1,3 +1,4 @@
 class Worker < ApplicationRecord
   belongs_to :company
+  has_many :family_burdens
 end
