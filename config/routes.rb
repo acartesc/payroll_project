@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :companies
   end
 
-  resources :companies do
+  resources :companies, except: [:new, :create, :index] do
     resources :workers
   end
 

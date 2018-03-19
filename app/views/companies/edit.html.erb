@@ -1,6 +1,6 @@
 <h1>Editing Company</h1>
 
-<%= render 'form', company: @company %>
+<%= render 'update', company: @company %>
 
 <%= link_to 'Show', @company %> |
-<%= link_to 'Back', companies_path %>
+<%= link_to 'Back', client_path(@company.client) %>
