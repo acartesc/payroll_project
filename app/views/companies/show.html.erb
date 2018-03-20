@@ -8,24 +8,21 @@
   <strong>Rut:</strong>
   <%= @company.taxpayer_id_company %>
 </p>
-<%= link_to 'Crear Trabajador', new_company_worker_path(@company) %>
+
 <%= link_to 'Editar', edit_company_path(@company) %>
 <%= link_to 'Volver', client_path(@company.client) %>
 
 <br>
 <br>
 
-<h1>Trabajadores</h1>
-
+<h2>Trabajadores</h2>
+<%= link_to 'Crear Trabajador', new_company_worker_path(@company) %>
 <table>
   <thead>
     <tr>
       <th>Rut</th>
-      <th>First name</th>
-      <th>Last name1</th>
-      <th>Last name2</th>
-
-      <th colspan="3"></th>
+      <th>Nombre</th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -33,13 +30,11 @@
     <% @company.workers.each do |worker| %>
       <tr>
         <td><%= worker.rut %></td>
-        <td><%= worker.first_name %></td>
-        <td><%= worker.last_name1 %></td>
-        <td><%= worker.last_name2 %></td>
+        <td><%= worker.first_name %> <%= worker.last_name1 %> <%= worker.last_name2 %></td>
 
-        <td><%= link_to 'Show', worker %></td>
-        <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
-        <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', company_worker_path(worker.company, worker) %></td>
+        <td><%= link_to 'Editar', edit_company_worker_path(worker.company, worker) %></td>
+        <td><%= link_to 'Borrar', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

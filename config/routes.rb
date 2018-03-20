@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   root to: "clients#index"
-  resources :workers do
+  resources :workers, except: [:new, :create, :index] do
     resources :family_burdens
   end
 

@@ -10,7 +10,7 @@
 </p>
 
 
-<%= link_to 'Crear Empresa', new_client_company_path(@client) %>
+
 
 <%= link_to 'Editar', edit_client_path(@client) %> |
 <%= link_to 'Volver', clients_path %>
@@ -22,10 +22,12 @@
     <tr>
       <th>Rut Empresa</th>
       <th>Nombre Empresa</th>
-      <th colspan="3"></th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
+<h2>Empresas</h2>
+<%= link_to 'Crear Empresa', new_client_company_path(@client) %>
   <tbody>
     <% @client.companies.each do |company| %>
       <tr>
