@@ -70,5 +70,5 @@
   <%= @worker.address_apartment %>
 </p>
 
-<%= link_to 'Edit', edit_worker_path(@worker) %> |
+<%= link_to 'Edit', edit_company_worker_path(@worker.company, @worker) %> |
 <%= link_to 'Back', company_path(@worker.company) %>
