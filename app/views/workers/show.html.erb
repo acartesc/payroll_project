@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% @worker.family_burdens.each do |family_burden|%>
+<p> <%= family_burden.name %> </p>
+<% end %>
 
 <p>
   <strong>Rut:</strong>

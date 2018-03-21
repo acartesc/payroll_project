@@ -5,6 +5,7 @@ class FamilyBurdensController < ApplicationController
   # GET /family_burdens.json
   def index
     @family_burdens = FamilyBurden.where(worker_id: params[:worker_id])
+    @worker = Worker.find(params[:worker_id])
   end
 
   # GET /family_burdens/1
