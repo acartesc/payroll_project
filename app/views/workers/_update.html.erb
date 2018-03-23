@@ -1,87 +1,89 @@
 <%= form_with(model: worker, url: company_worker_path(params[:company_id], worker)) do |form| %>
-  <% if worker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
+<% if worker.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
 
-      <ul>
-      <% worker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% worker.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :rut %>
-    <%= form.text_field :rut, id: :worker_rut %>
-  </div>
 
-  <div class="field">
-    <%= form.label :Nombre %>
-    <%= form.text_field :first_name, id: :worker_first_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :'Segundo nombre' %>
-    <%= form.text_field :middle_name, id: :worker_middle_name %>
-  </div>
+<div class="field">
+  <%= form.label :rut %>
+  <%= form.text_field :rut, id: :worker_rut %>
+</div>
 
-  <div class="field">
-    <%= form.label :'Primer apellido' %>
-    <%= form.text_field :last_name1, id: :worker_last_name1 %>
-  </div>
+<div class="field">
+  <%= form.label :Nombre %>
+  <%= form.text_field :first_name, id: :worker_first_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :'Segundo apellido' %>
-    <%= form.text_field :last_name2, id: :worker_last_name2 %>
-  </div>
+<div class="field">
+  <%= form.label :'Segundo nombre' %>
+  <%= form.text_field :middle_name, id: :worker_middle_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :'Fecha de nacimiento' %>
-    <%= form.date_field :birthdate, id: :worker_birthdate %>
-  </div>
+<div class="field">
+  <%= form.label :'Primer apellido' %>
+  <%= form.text_field :last_name1, id: :worker_last_name1 %>
+</div>
 
-  <div class="field">
-    <%= form.label :'Sexo' %>
-    <%= form.select :gender, ['Masculino', 'Femenino'], id: :worker_gender %>
-  </div>
+<div class="field">
+  <%= form.label :'Segundo apellido' %>
+  <%= form.text_field :last_name2, id: :worker_last_name2 %>
+</div>
 
-  <div class="field">
-    <%= form.label :Email %>
-    <%= form.text_field :email, id: :worker_email %>
-  </div>
+<div class="field">
+  <%= form.label :'Fecha de nacimiento' %>
+  <%= form.date_field :birthdate, id: :worker_birthdate %>
+</div>
 
-  <div class="field">
-    <%= form.label :Teléfono %>
-    <%= form.text_field :phone, id: :worker_phone %>
-  </div>
+<div class="field">
+  <%= form.label :'Sexo' %>
+  <%= form.select :gender, ['Masculino', 'Femenino'], id: :worker_gender %>
+</div>
 
-  <div class="field">
-    <%= form.label :Región %>
-    <%= form.select :address_region, ['Metropolitana de Santiago', 'XV de Arica y Parinacota', 'I de Tarapacá', 'II de Antofagasta', 'III de Atacama', 'IV de Coquimbo', 'V de Valparaíso', "VI del Libertador General Bernardo O'Higgins", 'VII del Maule', 'VII del Bío Bío', 'IX de la Araucanía', 'XIV de los Ríos', 'X de los Lagos', '	XI Aisén del General Carlos Ibáñez del Campo', 'XII de Magallanes y Antártica Chilena'], id: :worker_address_region %>
-  </div>
+<div class="field">
+  <%= form.label :Email %>
+  <%= form.text_field :email, id: :worker_email %>
+</div>
 
-  <div class="field">
-    <%= form.label :Comuna %>
-    <%= form.text_field :address_city, id: :worker_address_city %>
-  </div>
+<div class="field">
+  <%= form.label :Teléfono %>
+  <%= form.text_field :phone, id: :worker_phone %>
+</div>
 
-  <div class="field">
-    <%= form.label :Calle %>
-    <%= form.text_field :address_street, id: :worker_address_street %>
-  </div>
+<div class="field">
+  <%= form.label :Región %>
+  <%= form.select :address_region, ['Metropolitana de Santiago', 'XV de Arica y Parinacota', 'I de Tarapacá', 'II de Antofagasta', 'III de Atacama', 'IV de Coquimbo', 'V de Valparaíso', "VI del Libertador General Bernardo O'Higgins", 'VII del Maule', 'VII del Bío Bío', 'IX de la Araucanía', 'XIV de los Ríos', 'X de los Lagos', '	XI Aisén del General Carlos Ibáñez del Campo', 'XII de Magallanes y Antártica Chilena'], id: :worker_address_region %>
+</div>
 
-  <div class="field">
-    <%= form.label :Número %>
-    <%= form.text_field :address_number, id: :worker_address_number %>
-  </div>
+<div class="field">
+  <%= form.label :Comuna %>
+  <%= form.text_field :address_city, id: :worker_address_city %>
+</div>
 
-  <div class="field">
-    <%= form.label :'Depto / Casa' %>
-    <%= form.text_field :address_apartment, id: :worker_address_apartment %>
-  </div>
+<div class="field">
+  <%= form.label :Calle %>
+  <%= form.text_field :address_street, id: :worker_address_street %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="field">
+  <%= form.label :Número %>
+  <%= form.text_field :address_number, id: :worker_address_number %>
+</div>
+
+<div class="field">
+  <%= form.label :'Depto / Casa' %>
+  <%= form.text_field :address_apartment, id: :worker_address_apartment %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>
