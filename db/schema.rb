@@ -46,19 +46,13 @@ ActiveRecord::Schema.define(version: 20180322003140) do
     t.index ["worker_id"], name: "index_health_plans_on_worker_id"
   end
 
-  create_table "taxpayer_id_companies", force: :cascade do |t|
-    t.string "business_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "workers", force: :cascade do |t|
     t.string "rut"
     t.string "first_name"
     t.string "middle_name"
     t.string "last_name1"
     t.string "last_name2"
-    t.date "bithdate"
+    t.date "birthdate"
     t.string "gender"
     t.string "email"
     t.string "phone"

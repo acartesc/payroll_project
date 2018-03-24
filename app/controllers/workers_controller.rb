@@ -27,6 +27,7 @@ class WorkersController < ApplicationController
   # POST /workers.json
   def create
     @worker = Worker.new(worker_params)
+    @worker.health_plan = HealthPlan.new(health_plan_params)
     @worker.company = Company.find(params[:company_id])
     respond_to do |format|
       if @worker.save
@@ -43,7 +44,7 @@ class WorkersController < ApplicationController
   # PATCH/PUT /workers/1.json
   def update
     respond_to do |format|
-      if @worker.update(worker_params)
+      if @worker.update(worker_params) && @worker.health_plan.update(health_plan_params)
         format.html { redirect_to company_path(@worker.company), notice: 'Worker was successfully updated.' }
         format.json { render :show, status: :ok, location: @worker }
       else
@@ -75,6 +76,10 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:rut, :first_name, :middle_name, :last_name1, :last_name2, :bithdate,:gender, :email, :phone, :address_region, :address_city, :address_street, :address_number, :address_apartment)
+      params.require(:worker).permit(:rut, :first_name, :middle_name, :last_name1, :last_name2, :birthdate,:gender, :email, :phone, :address_region, :address_city, :address_street, :address_number, :address_apartment)
+    end
+
+    def health_plan_params
+      params.require(:worker).require(:health_plan_attributes).permit(:name, :deduction)
     end
 end

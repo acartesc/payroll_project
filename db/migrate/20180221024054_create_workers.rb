@@ -6,7 +6,7 @@ class CreateWorkers < ActiveRecord::Migration[5.1]
       t.string :middle_name
       t.string :last_name1
       t.string :last_name2
-      t.date :bithdate
+      t.date :birthdate
       t.string :gender
       t.string :email
       t.string :phone
