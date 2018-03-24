@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322003140) do
+ActiveRecord::Schema.define(version: 20180324150617) do
+
+  create_table "base_salaries", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "worker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["worker_id"], name: "index_base_salaries_on_worker_id"
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string "name"

@@ -11,20 +11,6 @@
     </div>
   <% end %>
 
-  <%= form.fields_for :health_plan, HealthPlan.new(worker_id: worker) do |of| %>
-
-    <div class="field">
-      <%= of.label :Nombre_institución %>
-      <%= of.text_field :name %>
-    </div>
-
-    <div class="field">
-      <%= of.label :'% de descuento' %>
-      <%= of.number_field :deduction, class: :text_field, step: :any %>
-    </div>
-
-  <% end %>
-
   <div class="field">
     <%= form.label :rut %>
     <%= form.text_field :rut, id: :worker_rut %>
@@ -94,6 +80,20 @@
     <%= form.label :'Depto / Casa' %>
     <%= form.text_field :address_apartment, id: :worker_address_apartment %>
   </div>
+
+  <%= form.fields_for :health_plan, HealthPlan.new(worker_id: worker) do |of| %>
+
+    <div class="field">
+      <%= of.label :Nombre_institución %>
+      <%= of.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= of.label :'% de descuento' %>
+      <%= of.number_field :deduction, class: :text_field, step: :any %>
+    </div>
+
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
