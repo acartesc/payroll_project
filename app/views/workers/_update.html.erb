@@ -14,12 +14,12 @@
   <%= form.fields_for :health_plan, worker.health_plan do |of| %>
 
     <div class="field">
-      <%= of.label :nombre_institución %><br />
+      <%= of.label :Nombre_institución %>
       <%= of.text_field :name %>
     </div>
-    <h1> OLI </h1>
+
     <div class="field">
-      <%= of.label :dirección %><br />
+      <%= of.label :Descuento %>
       <%= of.text_field :deduction, autocomplete: "address" %>
     </div>
 
