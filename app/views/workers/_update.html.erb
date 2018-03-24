@@ -1,29 +1,17 @@
 <%= form_with(model: worker, url: company_worker_path(params[:company_id], worker)) do |form| %>
   <% if worker.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
 
-    <ul>
-      <% worker.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+      <ul>
+        <% worker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <%= form.fields_for :health_plan, worker.health_plan do |of| %>
-
-    <div class="field">
-      <%= of.label :Nombre_institución %>
-      <%= of.text_field :name %>
-    </div>
-
-    <div class="field">
-      <%= of.label :Descuento %>
-      <%= of.text_field :deduction, autocomplete: "address" %>
-    </div>
-
-  <% end %>
+  <h3>Datos Trabajador</h3>
 
   <div class="field">
     <%= form.label :rut %>
@@ -98,4 +86,32 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <br>
+  <h3>Sueldo Base Trabajador</h3>
+  <%= form.fields_for :base_salary, worker.base_salary do |of| %>
+
+    <div class="field">
+      <%= of.label :Sueldo_base %>
+      <%= of.number_field :amount %>
+    </div>
+  <% end %>
+
+  <br>
+  <h3>Plan de Salud Trabajador</h3>
+
+  <%= form.fields_for :health_plan, worker.health_plan do |of| %>
+
+    <div class="field">
+      <%= of.label :Nombre_institución %>
+      <%= of.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= of.label :Descuento %>
+      <%= of.text_field :deduction, autocomplete: "address" %>
+    </div>
+
+  <% end %>
+
 <% end %>

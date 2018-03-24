@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <h3>Datos Trabajador</h3>
+
   <div class="field">
     <%= form.label :rut %>
     <%= form.text_field :rut, id: :worker_rut %>
@@ -81,6 +83,18 @@
     <%= form.text_field :address_apartment, id: :worker_address_apartment %>
   </div>
 
+  <br>
+  <h3>Sueldo Base Trabajador</h3>
+  <%= form.fields_for :base_salary, BaseSalary.new(worker_id: worker) do |of| %>
+
+    <div class="field">
+      <%= of.label :Sueldo_base %>
+      <%= of.number_field :amount %>
+    </div>
+    <% end %>
+
+  <br>
+  <h3>Plan de Salud Trabajador</h3>
   <%= form.fields_for :health_plan, HealthPlan.new(worker_id: worker) do |of| %>
 
     <div class="field">

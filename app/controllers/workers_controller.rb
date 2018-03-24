@@ -28,6 +28,7 @@ class WorkersController < ApplicationController
   def create
     @worker = Worker.new(worker_params)
     @worker.health_plan = HealthPlan.new(health_plan_params)
+    @worker.base_salary = BaseSalary.new(base_salary_params)
     @worker.company = Company.find(params[:company_id])
     respond_to do |format|
       if @worker.save
@@ -44,7 +45,7 @@ class WorkersController < ApplicationController
   # PATCH/PUT /workers/1.json
   def update
     respond_to do |format|
-      if @worker.update(worker_params) && @worker.health_plan.update(health_plan_params)
+      if @worker.update(worker_params) && @worker.health_plan.update(health_plan_params) && @worker.base_salary_attributes.update(base_salary_params)
         format.html { redirect_to company_path(@worker.company), notice: 'Worker was successfully updated.' }
         format.json { render :show, status: :ok, location: @worker }
       else
@@ -81,5 +82,9 @@ class WorkersController < ApplicationController
 
     def health_plan_params
       params.require(:worker).require(:health_plan_attributes).permit(:name, :deduction)
+    end
+
+    def base_salary_params
+      params.require(:worker).require(:base_salary_attributes).permit(:amount)
     end
 end
