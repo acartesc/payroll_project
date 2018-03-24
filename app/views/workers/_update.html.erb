@@ -83,10 +83,6 @@
     <%= form.text_field :address_apartment, id: :worker_address_apartment %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
   <br>
   <h3>Sueldo Base Trabajador</h3>
   <%= form.fields_for :base_salary, worker.base_salary do |of| %>
@@ -113,5 +109,26 @@
     </div>
 
   <% end %>
+
+    <br>
+    <h3>AFP Trabajador</h3>
+
+    <%= form.fields_for :pension_fund, worker.pension_fund do |of| %>
+      <div class="field">
+
+        <%= of.label :Nombre_AFP %>
+        <%= of.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= of.label :Descuento %>
+        <%= of.text_field :deduction, autocomplete: "address" %>
+      </div>
+
+    <% end %>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
 
 <% end %>

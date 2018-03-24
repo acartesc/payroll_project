@@ -109,6 +109,22 @@
 
   <% end %>
 
+  <br>
+  <h3>AFP Trabajador</h3>
+  <%= form.fields_for :pension_fund, PensionFund.new(worker_id: worker) do |of| %>
+
+    <div class="field">
+      <%= of.label :Nombre_AFP %>
+      <%= of.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= of.label :'% de descuento' %>
+      <%= of.number_field :deduction, class: :text_field, step: :any %>
+    </div>
+
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
