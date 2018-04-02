@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Remunerations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Business name</th>
+      <th>Taxpayer id company</th>
+      <th>Worker rut</th>
+      <th>Worker name</th>
+      <th>Pension fund name</th>
+      <th>Pension fund deduction</th>
+      <th>Health plan name</th>
+      <th>Health plan deduction</th>
+      <th>Base salary</th>
+      <th>Absence</th>
+      <th>Extra hour</th>
+      <th>Family burden</th>
+      <th>Taxable</th>
+      <th>Bonus</th>
+      <th>Advance payment</th>
+      <th>Tax base</th>
+      <th>Food allowance</th>
+      <th>Transportation allowance</th>
+      <th>Non tax base</th>
+      <th>Total legal discount</th>
+      <th>Pension fund discount</th>
+      <th>Health discount</th>
+      <th>Unique tax discount</th>
+      <th>Unemployment insurance</th>
+      <th>Total legal discount</th>
+      <th>Advance payment discount</th>
+      <th>Total other discount</th>
+      <th>Total asset</th>
+      <th>Total discount</th>
+      <th>Net pay</th>
+      <th>Worker</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @remunerations.each do |remuneration| %>
+      <tr>
+        <td><%= remuneration.month %></td>
+        <td><%= remuneration.business_name %></td>
+        <td><%= remuneration.taxpayer_id_company %></td>
+        <td><%= remuneration.worker_rut %></td>
+        <td><%= remuneration.worker_name %></td>
+        <td><%= remuneration.pension_fund_name %></td>
+        <td><%= remuneration.pension_fund_deduction %></td>
+        <td><%= remuneration.health_plan_name %></td>
+        <td><%= remuneration.health_plan_deduction %></td>
+        <td><%= remuneration.base_salary %></td>
+        <td><%= remuneration.absence %></td>
+        <td><%= remuneration.extra_hour %></td>
+        <td><%= remuneration.family_burden %></td>
+        <td><%= remuneration.taxable %></td>
+        <td><%= remuneration.bonus %></td>
+        <td><%= remuneration.advance_payment %></td>
+        <td><%= remuneration.tax_base %></td>
+        <td><%= remuneration.food_allowance %></td>
+        <td><%= remuneration.transportation_allowance %></td>
+        <td><%= remuneration.non_tax_base %></td>
+        <td><%= remuneration.total_legal_discount %></td>
+        <td><%= remuneration.pension_fund_discount %></td>
+        <td><%= remuneration.health_discount %></td>
+        <td><%= remuneration.unique_tax_discount %></td>
+        <td><%= remuneration.unemployment_insurance %></td>
+        <td><%= remuneration.total_legal_discount %></td>
+        <td><%= remuneration.advance_payment_discount %></td>
+        <td><%= remuneration.total_other_discount %></td>
+        <td><%= remuneration.total_asset %></td>
+        <td><%= remuneration.total_discount %></td>
+        <td><%= remuneration.net_pay %></td>
+        <td><%= remuneration.worker %></td>
+        <td><%= link_to 'Show', remuneration %></td>
+        <td><%= link_to 'Edit', edit_remuneration_path(remuneration) %></td>
+        <td><%= link_to 'Destroy', remuneration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Remuneration', new_remuneration_path %>

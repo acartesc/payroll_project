@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   end
 
   root to: "clients#index"
+
   resources :workers, except: [:new, :create, :index] do
     resources :family_burdens
   end
+
+  resources :workers do
+    resources :remunerations  
+  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
