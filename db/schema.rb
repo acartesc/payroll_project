@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326234557) do
+ActiveRecord::Schema.define(version: 20180402231324) do
 
   create_table "base_salaries", force: :cascade do |t|
     t.integer "amount"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20180326234557) do
     t.integer "worker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "legal_bonus"
     t.index ["worker_id"], name: "index_remunerations_on_worker_id"
   end
 
