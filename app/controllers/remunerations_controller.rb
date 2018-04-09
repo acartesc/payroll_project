@@ -60,7 +60,7 @@ class RemunerationsController < ApplicationController
   def destroy
     @remuneration.destroy
     respond_to do |format|
-      format.html { redirect_to remunerations_url, notice: 'Remuneration was successfully destroyed.' }
+      format.html { redirect_to worker_remunerations_path(@remuneration.worker.id), notice: 'Remuneration was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,11 @@ class RemunerationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def remuneration_params
-      params.require(:remuneration).permit(:month, :business_name, :taxpayer_id_company, :worker_rut, :worker_name, :pension_fund_name, :pension_fund_deduction, :health_plan_name, :health_plan_deduction, :base_salary, :absence, :extra_hour, :family_burden, :taxable, :bonus, :advance_payment, :tax_base, :food_allowance, :transportation_allowance, :non_tax_base, :total_legal_discount, :pension_fund_discount, :health_discount, :unique_tax_discount, :unemployment_insurance, :total_legal_discount, :advance_payment_discount, :total_other_discount, :total_asset, :total_discount, :net_pay, :worker_id)
+      params.require(:remuneration).permit(:month, :business_name, :taxpayer_id_company, :worker_rut, :worker_name,
+        :pension_fund_name, :pension_fund_deduction, :health_plan_name, :health_plan_deduction, :base_salary, :absence,
+        :extra_hour, :family_burden, :taxable, :bonus, :advance_payment, :tax_base, :food_allowance,
+        :transportation_allowance, :non_tax_base, :total_legal_discount, :pension_fund_discount, :health_discount,
+        :unique_tax_discount, :unemployment_insurance, :total_legal_discount, :advance_payment_discount,
+        :total_other_discount, :total_asset, :total_discount, :net_pay, :worker_id, :legal_bonus)
     end
 end

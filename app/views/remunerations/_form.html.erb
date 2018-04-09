@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= form.label :fecha %>
-    <%= form.date_select :month, id: :remuneration_month %>
+    <%= form.date_select :month, discard_day: true, id: :remuneration_month  %>
   </div>
 
   <div class="field">
     <%= form.label :nombre_empresa %>
-    <%= form.text_field :business_name, value: @worker.company_details[:name], id: :remuneration_business_name %>
+    <%= form.text_field :business_name, value: @worker.company_details[:name], readonly: true %>
   </div>
 
   <div class="field">
     <%= form.label :rut_empresa %>
-    <%= form.text_field :taxpayer_id_company, value: @worker.company_details[:rut], id: :remuneration_taxpayer_id_company %>
+    <%= form.text_field :taxpayer_id_company, value: @worker.company_details[:rut], id: :remuneration_taxpayer_id_company, readonly: true %>
   </div>
 
   <div class="field">
     <%= form.label :rut_trabajador %>
-    <%= form.text_field :worker_rut, value: @worker.rut, id: :remuneration_worker_rut %>
+    <%= form.text_field :worker_rut, value: @worker.rut, id: :remuneration_worker_rut, readonly: true %>
   </div>
 
   <div class="field">
     <%= form.label :nombre_trabajador %>
-    <%= form.text_field :worker_name, value: @worker.full_name, id: :remuneration_worker_name %>
+    <%= form.text_field :worker_name, value: @worker.full_name, id: :remuneration_worker_name, readonly: true %>
   </div>
 
   <div class="field">
@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :descuento_AFP %>
-    <%= form.text_field :pension_fund_deduction, value: @worker.pension_fund.name, id: :remuneration_pension_fund_deduction %>
+    <%= form.text_field :pension_fund_deduction, value: @worker.pension_fund.deduction, id: :remuneration_pension_fund_deduction %>
   </div>
 
   <div class="field">
@@ -66,7 +66,7 @@
     <%= form.number_field :family_burden, value: @worker.family_burdens.size, id: :remuneration_family_burden %>
   </div>
 
-<h3>Haberes - Imponibles</h3>
+  <h3>Haberes - Imponibles</h3>
 
   <div class="field">
     <%= form.label :Sueldo_base %>
@@ -81,6 +81,11 @@
   <div class="field">
     <%= form.label :Gratificación_legal %>
     <%= form.number_field :legal_bonus, id: :remuneration_legal_bonus %>
+  </div>
+
+    <div class="field">
+    <%= form.label :Anticipos %>
+    <%= form.number_field :advance_payment, id: :remuneration_advance_payment %>
   </div>
 
   <div class="field">
@@ -127,11 +132,6 @@
   <div class="field">
     <%= form.label :advance_payment_discount %>
     <%= form.number_field :advance_payment_discount, id: :remuneration_advance_payment_discount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :advance_payment %>
-    <%= form.number_field :advance_payment, id: :remuneration_advance_payment %>
   </div>
 
   <div class="field">

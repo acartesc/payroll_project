@@ -1,163 +1,149 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Liquidación de Sueldo</h1>
+<h3>Mes: <%= months_to_string(@remuneration.month.month)%> <%= @remuneration.month.year%></h3>
 <p>
-  <strong>Month:</strong>
-  <%= @remuneration.month %>
+
 </p>
 
-<p>
-  <strong>Business name:</strong>
-  <%= @remuneration.business_name %>
-</p>
+<table>
+  <tr>
+    <th>Empresa:</th>
+    <th>Rut Empresa:</th>
+  </tr>
+  <tr>
+    <td><%= @remuneration.business_name %></td>
+    <td><%= @remuneration.taxpayer_id_company %></td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th>Rut:</th>
+    <th>Trabajador:</th>
+  </tr>
+  <tr>
+    <td><%= @remuneration.worker_rut %></td>
+    <td><%= @remuneration.worker_name %></td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th>AFP:</th>
+    <th>Isapre:</th>
+  </tr>
+  <tr>
+    <td><%= @remuneration.pension_fund_name %></td>
+    <td><%= @remuneration.health_plan_name %></td>
+  </tr>
+  <tr>
+    <td><%= @remuneration.pension_fund_deduction %></td>
+    <td><%= @remuneration.health_plan_deduction %></td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th>Dias Trabajados</th>
+    <th>Horas Extras</th>
+    <th>Cargas</th>
+    <th>Imponible</th>
+    <th>Tributable</th>
+  </tr>
+  <tr>
+    <td><%= @remuneration.calculate_assistance %></td>
+    <td><%= @remuneration.extra_hour %></td>
+    <td><%= @remuneration.family_burden %></td>
+    <td><%= @remuneration.tax_base %></td>
+    <td><%= @remuneration.taxable %></td>
+  </tr>
+
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Haberes</th>
+    <th colspan="2">Descuentos</th>
+  </tr>
+  <tr>
+    <td>Sueldo Base</td>
+    <td><%= @remuneration.base_salary %></td>
+    <td>Previsión</td>
+    <td><%= @remuneration.pension_fund_discount %></td>
+  </tr>
+  <tr>
+    <td>Horas Extra 50%</td>
+    <td><%= @remuneration.extra_hour %></td>
+    <td>Salud</td>
+    <td><%= @remuneration.health_discount %></td>
+  </tr>
+  <tr>
+    <td>Gratificación Legal</td>
+    <td><%= @remuneration.legal_bonus %></td>
+    <td>Impuesto Único</td>
+    <td><%= @remuneration.unique_tax_discount %></td>
+  </tr>
+  <tr>
+    <td>Anticipos</td>
+    <td><%= @remuneration.advance_payment %></td>
+    <td>Seguro de Cesantía</td>
+    <td><%= @remuneration.unemployment_insurance %></td>
+  </tr>
+  <tr>
+    <td>Otros Bonos</td>
+    <td><%= @remuneration.bonus %></td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <th>Total Imponible</th>
+    <td><%= @remuneration.tax_base %></td>
+    <th>Total Descuentos Legales</th>
+    <td><%= @remuneration.total_legal_discount %></td>
+  </tr>
+  <tr >
+    <td colspan="4"></td>
+  </tr>
+  <tr>
+    <td>Asginación de Colación</td>
+    <td><%= @remuneration.food_allowance %></td>
+    <td>Descuento por Anticipos</td>
+    <td><%= @remuneration.advance_payment_discount %></td>
+  </tr>
+  <tr>
+    <td>Asginación de Movilización</td>
+    <td><%= @remuneration.transportation_allowance %></td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <th>Total No Imponible</th>
+    <td><%= @remuneration.non_tax_base %></td>
+    <th>Total Otros Descuentos </th>
+    <td><%= @remuneration.total_other_discount %></td>
+  </tr>
+</table>
 
 <p>
-  <strong>Taxpayer id company:</strong>
-  <%= @remuneration.taxpayer_id_company %>
-</p>
-
-<p>
-  <strong>Worker rut:</strong>
-  <%= @remuneration.worker_rut %>
-</p>
-
-<p>
-  <strong>Worker name:</strong>
-  <%= @remuneration.worker_name %>
-</p>
-
-<p>
-  <strong>Pension fund name:</strong>
-  <%= @remuneration.pension_fund_name %>
-</p>
-
-<p>
-  <strong>Pension fund deduction:</strong>
-  <%= @remuneration.pension_fund_deduction %>
-</p>
-
-<p>
-  <strong>Health plan name:</strong>
-  <%= @remuneration.health_plan_name %>
-</p>
-
-<p>
-  <strong>Health plan deduction:</strong>
-  <%= @remuneration.health_plan_deduction %>
-</p>
-
-<p>
-  <strong>Base salary:</strong>
-  <%= @remuneration.base_salary %>
-</p>
-
-<p>
-  <strong>Absence:</strong>
-  <%= @remuneration.absence %>
-</p>
-
-<p>
-  <strong>Extra hour:</strong>
-  <%= @remuneration.extra_hour %>
-</p>
-
-<p>
-  <strong>Family burden:</strong>
-  <%= @remuneration.family_burden %>
-</p>
-
-<p>
-  <strong>Taxable:</strong>
-  <%= @remuneration.taxable %>
-</p>
-
-<p>
-  <strong>Bonus:</strong>
-  <%= @remuneration.bonus %>
-</p>
-
-<p>
-  <strong>Advance payment:</strong>
-  <%= @remuneration.advance_payment %>
-</p>
-
-<p>
-  <strong>Tax base:</strong>
-  <%= @remuneration.tax_base %>
-</p>
-
-<p>
-  <strong>Food allowance:</strong>
-  <%= @remuneration.food_allowance %>
-</p>
-
-<p>
-  <strong>Transportation allowance:</strong>
-  <%= @remuneration.transportation_allowance %>
-</p>
-
-<p>
-  <strong>Non tax base:</strong>
-  <%= @remuneration.non_tax_base %>
-</p>
-
-<p>
-  <strong>Total legal discount:</strong>
-  <%= @remuneration.total_legal_discount %>
-</p>
-
-<p>
-  <strong>Pension fund discount:</strong>
-  <%= @remuneration.pension_fund_discount %>
-</p>
-
-<p>
-  <strong>Health discount:</strong>
-  <%= @remuneration.health_discount %>
-</p>
-
-<p>
-  <strong>Unique tax discount:</strong>
-  <%= @remuneration.unique_tax_discount %>
-</p>
-
-<p>
-  <strong>Unemployment insurance:</strong>
-  <%= @remuneration.unemployment_insurance %>
-</p>
-
-<p>
-  <strong>Total legal discount:</strong>
-  <%= @remuneration.total_legal_discount %>
-</p>
-
-<p>
-  <strong>Advance payment discount:</strong>
-  <%= @remuneration.advance_payment_discount %>
-</p>
-
-<p>
-  <strong>Total other discount:</strong>
-  <%= @remuneration.total_other_discount %>
-</p>
-
-<p>
-  <strong>Total asset:</strong>
+  <strong>Total Haberes:</strong>
   <%= @remuneration.total_asset %>
 </p>
 
 <p>
-  <strong>Total discount:</strong>
+  <strong>Total Descuentos:</strong>
   <%= @remuneration.total_discount %>
 </p>
 
 <p>
-  <strong>Net pay:</strong>
+  <strong>Sueldo Líquido::</strong>
   <%= @remuneration.net_pay %>
-</p>
-
-<p>
-  <strong>Worker:</strong>
-  <%= @remuneration.worker %>
 </p>
 
 <%= link_to 'Edit', edit_worker_remuneration_path(@remuneration.worker, @remuneration) %> |

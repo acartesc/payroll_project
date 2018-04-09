@@ -10,12 +10,13 @@ one:
   pension_fund_deduction: 1.5
   health_plan_name: MyString
   health_plan_deduction: 1.5
-  base_salary: 1
-  absence: 1
-  extra_hour: 1
+  base_salary: 1000000
+  legal_bonus: 500000
+  absence: 0
+  extra_hour: 500000
   family_burden: 1
   taxable: 1
-  bonus: 1
+  bonus: 500000
   advance_payment: 1
   tax_base: 1
   food_allowance: 1

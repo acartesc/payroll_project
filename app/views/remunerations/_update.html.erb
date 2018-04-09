@@ -1,4 +1,4 @@
-<%= form_with(model: remuneration, url: worker_remuneration_path(params[:worker_id], remuneration))) do |form| %>
+<%= form_with(model: remuneration, url: worker_remuneration_path(params[:worker_id], remuneration)) do |form| %>
   <% if remuneration.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(remuneration.errors.count, "error") %> prohibited this remuneration from being saved:</h2>
@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= form.label :month %>
-    <%= form.date_select :month, id: :remuneration_month %>
+    <%= form.date_select :month, discard_day: true, id: :remuneration_month %>
   </div>
 
   <div class="field">
     <%= form.label :business_name %>
-    <%= form.text_field :business_name, id: :remuneration_business_name %>
+    <%= form.text_field :business_name, id: :remuneration_business_name, readonly: true %>
   </div>
 
   <div class="field">
     <%= form.label :taxpayer_id_company %>
-    <%= form.text_field :taxpayer_id_company, id: :remuneration_taxpayer_id_company %>
+    <%= form.text_field :taxpayer_id_company, id: :remuneration_taxpayer_id_company, readonly: true %>
   </div>
 
   <div class="field">
     <%= form.label :worker_rut %>
-    <%= form.text_field :worker_rut, id: :remuneration_worker_rut %>
+    <%= form.text_field :worker_rut, id: :remuneration_worker_rut, readonly: true %>
   </div>
 
   <div class="field">
     <%= form.label :worker_name %>
-    <%= form.text_field :worker_name, id: :remuneration_worker_name %>
+    <%= form.text_field :worker_name, id: :remuneration_worker_name, readonly: true %>
   </div>
 
   <div class="field">

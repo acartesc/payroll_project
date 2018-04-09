@@ -26,7 +26,7 @@ class Worker < ApplicationRecord
   end
 
   def base_salary_amount
-    base_salary.amount + 1
+    base_salary.amount
   end
 
 end

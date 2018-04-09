@@ -15,19 +15,3 @@ one:
   address_street: MyString
   address_number: MyString
   address_apartment: MyString
-
-two:
-  rut: MyString
-  first_name: MyString
-  middle_name: MyString
-  last_name1: MyString
-  last_name2: MyString
-  birthdate: 2018-02-20
-  gender: MyString
-  email: MyString
-  phone: MyString
-  address_region: MyString
-  address_city: MyString
-  address_street: MyString
-  address_number: MyString
-  address_apartment: MyString
