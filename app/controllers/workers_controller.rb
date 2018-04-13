@@ -1,6 +1,6 @@
 class WorkersController < ApplicationController
   before_action :set_worker, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
 
   # GET /workers
   # GET /workers.json

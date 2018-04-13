@@ -1,6 +1,6 @@
 class FamilyBurdensController < ApplicationController
   before_action :set_family_burden, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /family_burdens
   # GET /family_burdens.json
   def index
