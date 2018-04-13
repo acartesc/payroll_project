@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @family_burden.rut %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @family_burden.name %>
+</p>
+
+<p>
+  <strong>Worker:</strong>
+  <%= @family_burden.worker %>
+</p>
+
+<%= link_to 'Edit', edit_worker_family_burden_path(@family_burden) %> |
+<%= link_to 'Back', company_worker_path(@family_burden.worker.company.id, @family_burden.worker.id) %>

@@ -1,0 +1,6 @@
+<h1>Editing Family Burden</h1>
+
+<%= render 'update', family_burden: @family_burden %>
+
+<%= link_to 'Show', worker_family_burden_path(@family_burden.worker, @family_burden) %> |
+<%= link_to 'Back', company_worker_path(@family_burden.worker.company.id, @family_burden.worker.id) %>

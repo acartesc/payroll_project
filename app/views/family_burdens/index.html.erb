@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cargas Familiares</h1>
+<h2>
+  <%= @worker.first_name %>
+  <%=@worker.last_name1 %>
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rut</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @family_burdens.each do |family_burden| %>
+      <tr>
+        <td><%= family_burden.rut %></td>
+        <td><%= family_burden.name %></td>
+        <td><%= link_to 'Show', worker_family_burden_path(family_burden.worker, family_burden) %></td>
+        <td><%= link_to 'Edit', edit_worker_family_burden_path(family_burden.worker, family_burden) %></td>
+        <td><%= link_to 'Destroy', worker_family_burden_path(family_burden.worker, family_burden), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Family Burden', new_worker_family_burden_path %>
+<%= link_to 'Volver', new_worker_family_burden_path %>

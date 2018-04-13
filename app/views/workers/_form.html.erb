@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <h3>Datos Trabajador</h3>
+
   <div class="field">
     <%= form.label :rut %>
     <%= form.text_field :rut, id: :worker_rut %>
@@ -58,7 +60,11 @@
 
   <div class="field">
     <%= form.label :Región %>
-    <%= form.select :address_region, ['Metropolitana de Santiago', 'XV de Arica y Parinacota', 'I de Tarapacá', 'II de Antofagasta', 'III de Atacama', 'IV de Coquimbo', 'V de Valparaíso', "VI del Libertador General Bernardo O'Higgins", 'VII del Maule', 'VII del Bío Bío', 'IX de la Araucanía', 'XIV de los Ríos', 'X de los Lagos', '	XI Aisén del General Carlos Ibáñez del Campo', 'XII de Magallanes y Antártica Chilena'], id: :worker_address_region %>
+    <%= form.select :address_region, ['Metropolitana de Santiago', 'XV de Arica y Parinacota', 'I de Tarapacá',
+      'II de Antofagasta', 'III de Atacama', 'IV de Coquimbo', 'V de Valparaíso',
+      "VI del Libertador General Bernardo O'Higgins", 'VII del Maule', 'VII del Bío Bío', 'IX de la Araucanía',
+      'XIV de los Ríos', 'X de los Lagos', '	XI Aisén del General Carlos Ibáñez del Campo',
+      'XII de Magallanes y Antártica Chilena'], id: :worker_address_region %>
   </div>
 
   <div class="field">
@@ -80,6 +86,48 @@
     <%= form.label :'Depto / Casa' %>
     <%= form.text_field :address_apartment, id: :worker_address_apartment %>
   </div>
+
+  <br>
+  <h3>Sueldo Base Trabajador</h3>
+  <%= form.fields_for :base_salary, BaseSalary.new(worker_id: worker) do |of| %>
+
+    <div class="field">
+      <%= of.label :Sueldo_base %>
+      <%= of.number_field :amount %>
+    </div>
+    <% end %>
+
+  <br>
+  <h3>Plan de Salud Trabajador</h3>
+  <%= form.fields_for :health_plan, HealthPlan.new(worker_id: worker) do |of| %>
+
+    <div class="field">
+      <%= of.label :Nombre_institución %>
+      <%= of.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= of.label :'% de descuento' %>
+      <%= of.number_field :deduction, class: :text_field, step: :any %>
+    </div>
+
+  <% end %>
+
+  <br>
+  <h3>AFP Trabajador</h3>
+  <%= form.fields_for :pension_fund, PensionFund.new(worker_id: worker) do |of| %>
+
+    <div class="field">
+      <%= of.label :Nombre_AFP %>
+      <%= of.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= of.label :'% de descuento' %>
+      <%= of.number_field :deduction, class: :text_field, step: :any %>
+    </div>
+
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

@@ -16,6 +16,7 @@ class WorkersController < ApplicationController
   # GET /workers/new
   def new
     @worker = Worker.new
+    @worker.company = Company.find(params[:company_id])
   end
 
   # GET /workers/1/edit
@@ -26,10 +27,13 @@ class WorkersController < ApplicationController
   # POST /workers.json
   def create
     @worker = Worker.new(worker_params)
+    @worker.health_plan = HealthPlan.new(health_plan_params)
+    @worker.base_salary = BaseSalary.new(base_salary_params)
+    @worker.pension_fund = PensionFund.new(pension_fund_params)
     @worker.company = Company.find(params[:company_id])
     respond_to do |format|
       if @worker.save
-        format.html { redirect_to company_workers_path, notice: 'Worker was successfully created.' }
+        format.html { redirect_to company_path(@worker.company), notice: 'Worker was successfully created.' }
         format.json { render :show, status: :created, location: @worker }
       else
         format.html { render :new }
@@ -42,8 +46,8 @@ class WorkersController < ApplicationController
   # PATCH/PUT /workers/1.json
   def update
     respond_to do |format|
-      if @worker.update(worker_params)
-        format.html { redirect_to @worker, notice: 'Worker was successfully updated.' }
+      if @worker.update(worker_params) && @worker.health_plan.update(health_plan_params) && @worker.base_salary.update(base_salary_params) && @worker.pension_fund.update(pension_fund_params)
+        format.html { redirect_to company_path(@worker.company), notice: 'Worker was successfully updated.' }
         format.json { render :show, status: :ok, location: @worker }
       else
         format.html { render :edit }
@@ -57,7 +61,7 @@ class WorkersController < ApplicationController
   def destroy
     @worker.destroy
     respond_to do |format|
-      format.html { redirect_to workers_url, notice: 'Worker was successfully destroyed.' }
+      format.html { redirect_to company_path(@worker.company), notice: 'Worker was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,12 +72,24 @@ class WorkersController < ApplicationController
       @worker = Worker.find(params[:id])
     end
 
-    def set_company
-      @company = Company.find(params[:id])
-    end
+    # def set_company
+    #   @company = Company.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:rut, :first_name, :middle_name, :last_name1, :last_name2, :bithdate,:gender, :email, :phone, :address_region, :address_city, :address_street, :address_number, :address_apartment)
+      params.require(:worker).permit(:rut, :first_name, :middle_name, :last_name1, :last_name2, :birthdate,:gender, :email, :phone, :address_region, :address_city, :address_street, :address_number, :address_apartment)
+    end
+
+    def health_plan_params
+      params.require(:worker).require(:health_plan_attributes).permit(:name, :deduction)
+    end
+
+    def base_salary_params
+      params.require(:worker).require(:base_salary_attributes).permit(:amount)
+    end
+
+    def pension_fund_params
+      params.require(:worker).require(:pension_fund_attributes).permit(:name, :deduction)
     end
 end

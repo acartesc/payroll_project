@@ -17,7 +17,7 @@ class WorkersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create worker" do
     assert_difference('Worker.count') do
-      post workers_url, params: { worker: { address_apartment: @worker.address_apartment, address_city: @worker.address_city, address_number: @worker.address_number, address_region: @worker.address_region, address_street: @worker.address_street, bithdate: @worker.bithdate, email: @worker.email, first_name: @worker.first_name, gender: @worker.gender, last_name1: @worker.last_name1, last_name2: @worker.last_name2, middle_name: @worker.middle_name, phone: @worker.phone, rut: @worker.rut } }
+      post workers_url, params: { worker: { address_apartment: @worker.address_apartment, address_city: @worker.address_city, address_number: @worker.address_number, address_region: @worker.address_region, address_street: @worker.address_street, birthdate: @worker.birthdate, email: @worker.email, first_name: @worker.first_name, gender: @worker.gender, last_name1: @worker.last_name1, last_name2: @worker.last_name2, middle_name: @worker.middle_name, phone: @worker.phone, rut: @worker.rut } }
     end
 
     assert_redirected_to worker_url(Worker.last)
@@ -34,7 +34,7 @@ class WorkersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update worker" do
-    patch worker_url(@worker), params: { worker: { address_apartment: @worker.address_apartment, address_city: @worker.address_city, address_number: @worker.address_number, address_region: @worker.address_region, address_street: @worker.address_street, bithdate: @worker.bithdate, email: @worker.email, first_name: @worker.first_name, gender: @worker.gender, last_name1: @worker.last_name1, last_name2: @worker.last_name2, middle_name: @worker.middle_name, phone: @worker.phone, rut: @worker.rut } }
+    patch worker_url(@worker), params: { worker: { address_apartment: @worker.address_apartment, address_city: @worker.address_city, address_number: @worker.address_number, address_region: @worker.address_region, address_street: @worker.address_street, birthdate: @worker.birthdate, email: @worker.email, first_name: @worker.first_name, gender: @worker.gender, last_name1: @worker.last_name1, last_name2: @worker.last_name2, middle_name: @worker.middle_name, phone: @worker.phone, rut: @worker.rut } }
     assert_redirected_to worker_url(@worker)
   end
 

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Liquidaciones</h1>
+<h2><%= @worker.first_name %> <%= @worker.last_name1 %> <%= @worker.last_name2 %></h2>
+<%= link_to 'Nueva Liquidación de Sueldo', new_worker_remuneration_path %>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Mes</th>
+      <th>Sueldo Base</th>
+      <th>Total Haberes</th>
+      <th>Sueldo Líquido</th>
+      <th>Total Descuentos</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @remunerations.each do |remuneration| %>
+      <tr>
+        <td><%= months_to_string remuneration.month.month %> <%= remuneration.month.year%></td>
+        <td><%= remuneration.base_salary %></td>
+        <td><%= remuneration.total_asset %></td>
+        <td><%= remuneration.total_discount %></td>
+        <td><%= remuneration.net_pay %></td>
+        <td><%= link_to 'Mostrar', worker_remuneration_path(remuneration.worker, remuneration) %></td>
+        <td><%= link_to 'Editar', edit_worker_remuneration_path(remuneration.worker ,remuneration) %></td>
+        <td><%= link_to 'Borrar', worker_remuneration_path(remuneration.worker, remuneration), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
-
   devise_for :users
+  resources :clients do
+    resources :companies
+  end
 
-  resources :companies do
+  resources :companies, except: [:new, :create, :index] do
     resources :workers
   end
 
-  root to: "workers#index"
-  resources :workers
-  #VER qué se necesita mostrar de workers para hacer only
+  root to: "clients#index"
+
+  resources :workers, except: [:new, :create, :index] do
+    resources :family_burdens
+  end
+
+  resources :workers do
+    resources :remunerations
+  end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
