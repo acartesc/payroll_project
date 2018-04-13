@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413014450) do
+ActiveRecord::Schema.define(version: 20180413022604) do
 
   create_table "base_salaries", force: :cascade do |t|
     t.integer "amount"
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20180413014450) do
     t.string "middle_name"
     t.string "last_name1"
     t.string "last_name2"
-    t.date "bithdate"
+    t.date "birthdate"
     t.string "gender"
     t.string "email"
     t.string "phone"
