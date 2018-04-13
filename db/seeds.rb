@@ -21,3 +21,7 @@ worker = Worker.create(rut: '16.677.723-2', first_name: 'Andrés', middle_name: 
 family_burdens = FamilyBurden.create([{rut: '24.117.106-k', name: 'Agustina Cartes Reyes', worker_id: 1}, {rut: '15.714.652-1', name: 'Karen Reyes Espinoza', worker_id: 1}])
 
 base_salary = BaseSalary.create(amount: '1000000', worker_id: 1)
+
+health_plan = HealthPlan.create(name: 'Fonasa', deduction: 0.07, worker_id: 1)
+
+pension_fund = PensionFund.create(name: 'Plan Vital', deduction: 0.1041, worker_id: 1)
