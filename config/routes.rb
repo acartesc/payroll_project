@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :workers do
-    resources :remunerations  
+    resources :remunerations
   end
 
 
