@@ -8,6 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
+gem 'chartkick'
+gem 'groupdate'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
@@ -24,6 +26,8 @@ gem 'devise'
 gem 'rails-erd', require: false, group: :development
 
 gem 'cancancan'
+
+gem 'activeadmin'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

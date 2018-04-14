@@ -28,6 +28,8 @@ pension_fund = PensionFund.create(name: 'Plan Vital', deduction: 0.1041, worker_
 
 user = User.create(email: 'acartescc@gmail.com', password:'agus2012',password_confirmation: 'agus2012', role: 1)
 
-3.times do |i|
-  User.create(email: "user#{i}@gmail.com", password: 'mypass', password_confirmation: 'mypass', role: 0)
+10.times do |i|
+  User.create(email: "user#{i}@gmail.com", password: 'mypass', password_confirmation: 'mypass', role: 0, created_at: rand(1..10).to_i.day.ago)
 end
+
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
