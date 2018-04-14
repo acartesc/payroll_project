@@ -11,12 +11,6 @@
 // about supported directives.
 //
 
-
-//= require jquery-1.10.1.min
-//= require jquery.dropotron.min
-//= require skel.min
-//= require html5shiv
-
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
