@@ -16,6 +16,7 @@ Rails.application.config.assets.precompile += %w(*.woff2)
 Rails.application.config.assets.precompile += %w(*.ttf)
 Rails.application.config.assets.precompile += %w(*.eot)
 Rails.application.config.assets.precompile += %w(*.svg)
+Rails.application.config.assets.precompile += %w(*.scss)
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
