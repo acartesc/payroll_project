@@ -18,4 +18,4 @@ module PayrollProject
 
 end
 
-config.assets.initialize_on_precompile = true
+config.serve_static_assets = true
