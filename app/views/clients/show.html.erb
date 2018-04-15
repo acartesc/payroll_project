@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <h1><%= @client.name %></h1>
 </p>
@@ -9,20 +7,17 @@
   <%= @client.client_rut %>
 </p>
 
-
-
-
 <%= link_to 'Editar', edit_client_path(@client) %> |
 <%= link_to 'Volver', clients_path %>
 <br>
 <br>
 
-<table>
+<table id="myTable">
   <thead>
     <tr>
       <th>Rut Empresa</th>
       <th>Nombre Empresa</th>
-      <th colspan="3">Opciones</th>
+      <th>Opciones</th>
     </tr>
   </thead>
 
@@ -33,9 +28,9 @@
       <tr>
         <td><%= company.taxpayer_id_company %></td>
         <td><%= company.business_name %></td>
-        <td><%= link_to 'Mostrar', client_company_path(company.client, company) %></td>
-        <td><%= link_to 'Editar', edit_client_company_path(company.client, company) %></td>
-        <td><%= link_to 'Borrar', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', client_company_path(company.client, company) %>
+        <%= link_to 'Editar', edit_client_company_path(company.client, company) %>
+        <%= link_to 'Borrar', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

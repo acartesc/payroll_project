@@ -2,6 +2,6 @@
   "name": "payroll_project",
   "private": true,
   "dependencies": {
-    "datatables.net": "^1.10.16"
+    "datatables.net-bs4": "^1.10.16"
   }
 }
