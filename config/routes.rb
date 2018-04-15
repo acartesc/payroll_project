@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
+
   devise_for :users, ActiveAdmin::Devise.config
+
+
+
   ActiveAdmin.routes(self)
   resources :clients do
     resources :companies
@@ -9,7 +14,7 @@ Rails.application.routes.draw do
     resources :workers
   end
 
-  root to: "clients#index"
+root to: "clients#index"
 
   resources :workers, except: [:new, :create, :index] do
     resources :family_burdens
