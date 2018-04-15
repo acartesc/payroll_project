@@ -17,5 +17,3 @@ module PayrollProject
   end
 
 end
-
-config.assets.initialize_on_precompile = true
