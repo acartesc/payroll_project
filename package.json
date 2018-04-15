@@ -1,5 +1,7 @@
 {
   "name": "payroll_project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "datatables.net": "^1.10.16"
+  }
 }
