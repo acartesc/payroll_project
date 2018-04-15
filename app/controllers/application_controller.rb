@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
       format.html { redirect_to root_url, alert: exception.message }
     end
   end
+
+  def access_denied(exception)
+    redirect_to admin_organizations_path, alert: exception.message
+  end
 end

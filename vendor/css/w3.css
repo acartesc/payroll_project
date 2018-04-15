@@ -263,6 +263,10 @@ h6 {
     font-family: serif
 }
 
+h1{
+  color: #009688!important;
+}
+
 h1,
 h2,
 h3,
@@ -271,7 +275,8 @@ h5,
 h6 {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 400;
-    margin: 10px 0
+    margin: 10px 0;
+
 }
 
 .w3-wide {

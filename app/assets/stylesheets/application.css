@@ -15,5 +15,6 @@
  *= require font-awesome
  *= require datatables.net-bs4/css/dataTables.bootstrap4
  *= require_tree .
+ *= stub active_admin
  *= require_self
  */
