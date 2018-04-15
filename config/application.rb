@@ -17,5 +17,3 @@ module PayrollProject
   end
 
 end
-
-config.serve_static_assets = true
