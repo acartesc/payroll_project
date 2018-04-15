@@ -13,7 +13,7 @@
  *= require w3
  *= require w3-theme-black
  *= require font-awesome
-
+ *= require datatables.net-bs4/css/dataTables.bootstrap4
  *= require_tree .
  *= require_self
  */
