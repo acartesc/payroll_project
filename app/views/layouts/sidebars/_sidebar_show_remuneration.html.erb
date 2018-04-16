@@ -5,5 +5,5 @@
   </a>
   <h4 class="w3-bar-item"><b>Menu</b></h4>
   <%= link_to "Editar Liquidación", edit_worker_remuneration_path(@remuneration.worker, @remuneration), class: "w3-bar-item w3-button w3-hover-black" %>
-  <%= link_to 'Volver a Trabajador', worker_remuneration_path(@remuneration.worker, @remuneration), class: "w3-bar-item w3-button w3-hover-black" %>
+  <%= link_to 'Volver a Trabajador', worker_path(@remuneration.worker), class: "w3-bar-item w3-button w3-hover-black" %>
 </nav>

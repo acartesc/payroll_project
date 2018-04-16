@@ -16,6 +16,7 @@ class FamilyBurdensController < ApplicationController
   # GET /family_burdens/new
   def new
     @family_burden = FamilyBurden.new
+    @family_burden.worker = Worker.find(params[:worker_id])
   end
 
   # GET /family_burdens/1/edit
