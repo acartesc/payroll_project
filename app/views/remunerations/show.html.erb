@@ -63,7 +63,7 @@
   </tr>
   <tr>
     <td><%= @remuneration.calculate_assistance %></td>
-    <td><%= @remuneration.extra_hour %></td>
+    <td><%= number_with_delimiter(@remuneration.extra_hour) %></td>
     <td><%= @remuneration.family_burden %></td>
     <td><%= number_with_delimiter(@remuneration.tax_base) %></td>
     <td><%= number_with_delimiter(@remuneration.taxable) %></td>

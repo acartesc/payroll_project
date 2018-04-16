@@ -10,163 +10,138 @@
       </ul>
     </div>
   <% end %>
+  <br>
+  <h3>Antecedentes</h3>
+
+    <div class="field">
+      <%= form.label :fecha %>
+      <%= form.date_select :month, discard_day: true, id: :remuneration_month  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :nombre_empresa %>
+      <%= form.text_field :business_name, value: @worker.company_details[:name], readonly: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :rut_empresa %>
+      <%= form.text_field :taxpayer_id_company, value: @worker.company_details[:rut], id: :remuneration_taxpayer_id_company, readonly: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :rut_trabajador %>
+      <%= form.text_field :worker_rut, value: @worker.rut, id: :remuneration_worker_rut, readonly: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :nombre_trabajador %>
+      <%= form.text_field :worker_name, value: @worker.full_name, id: :remuneration_worker_name, readonly: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :nombre_AFP %>
+      <%= form.text_field :pension_fund_name, value: @worker.pension_fund.name, id: :remuneration_pension_fund_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :descuento_AFP %>
+      <%= form.text_field :pension_fund_deduction, value: @worker.pension_fund.deduction, id: :remuneration_pension_fund_deduction %>
+    </div>
+
+    <div class="field">
+      <%= form.label :nombre_Isapre %>
+      <%= form.text_field :health_plan_name, value: @worker.health_plan.name, id: :remuneration_health_plan_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :descuento_Isapre %>
+      <%= form.text_field :health_plan_deduction, value: @worker.health_plan.deduction, id: :remuneration_health_plan_deduction %>
+    </div>
+
+    <div class="field">
+      <%= form.label :Ausencias %>
+      <%= form.number_field :absence, id: :remuneration_absence %>
+    </div>
+
+    <div class="field">
+      <%= form.label :Cargas_familiares %>
+      <%= form.number_field :family_burden, value: @worker.family_burdens.size, id: :remuneration_family_burden %>
+    </div>
+
+  <br>
+
+  <h3>Haberes - Imponibles</h3>
 
   <div class="field">
-    <%= form.label :month %>
-    <%= form.date_select :month, discard_day: true, id: :remuneration_month %>
+    <%= form.label :Sueldo_base %>
+    <%= form.number_field :base_salary, value: @worker.base_salary.amount, id: :remuneration_base_salary %>
   </div>
 
   <div class="field">
-    <%= form.label :business_name %>
-    <%= form.text_field :business_name, id: :remuneration_business_name, readonly: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :taxpayer_id_company %>
-    <%= form.text_field :taxpayer_id_company, id: :remuneration_taxpayer_id_company, readonly: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :worker_rut %>
-    <%= form.text_field :worker_rut, id: :remuneration_worker_rut, readonly: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :worker_name %>
-    <%= form.text_field :worker_name, id: :remuneration_worker_name, readonly: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pension_fund_name %>
-    <%= form.text_field :pension_fund_name, id: :remuneration_pension_fund_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pension_fund_deduction %>
-    <%= form.text_field :pension_fund_deduction, id: :remuneration_pension_fund_deduction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :health_plan_name %>
-    <%= form.text_field :health_plan_name, id: :remuneration_health_plan_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :health_plan_deduction %>
-    <%= form.text_field :health_plan_deduction, id: :remuneration_health_plan_deduction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :base_salary %>
-    <%= form.number_field :base_salary, id: :remuneration_base_salary %>
-  </div>
-
-  <div class="field">
-    <%= form.label :absence %>
-    <%= form.number_field :absence, id: :remuneration_absence %>
-  </div>
-
-  <div class="field">
-    <%= form.label :extra_hour %>
+    <%= form.label :Horas_extras %>
     <%= form.number_field :extra_hour, id: :remuneration_extra_hour %>
   </div>
 
   <div class="field">
-    <%= form.label :family_burden %>
-    <%= form.number_field :family_burden, id: :remuneration_family_burden %>
+    <%= form.label :Gratificación_legal %>
+    <%= form.number_field :legal_bonus, id: :remuneration_legal_bonus %>
   </div>
 
-  <div class="field">
-    <%= form.label :taxable %>
-    <%= form.number_field :taxable, id: :remuneration_taxable %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bonus %>
-    <%= form.number_field :bonus, id: :remuneration_bonus %>
-  </div>
-
-  <div class="field">
-    <%= form.label :advance_payment %>
+    <div class="field">
+    <%= form.label :Anticipos %>
     <%= form.number_field :advance_payment, id: :remuneration_advance_payment %>
   </div>
 
   <div class="field">
-    <%= form.label :tax_base %>
-    <%= form.number_field :tax_base, id: :remuneration_tax_base %>
+    <%= form.label :Otros_bonos %>
+    <%= form.number_field :bonus, id: :remuneration_bonus %>
   </div>
 
+  <br>
+  <h3>Haberes - No Imponibles</h3>
+
   <div class="field">
-    <%= form.label :food_allowance %>
+    <%= form.label :Asignación_de_colación %>
     <%= form.number_field :food_allowance, id: :remuneration_food_allowance %>
   </div>
 
   <div class="field">
-    <%= form.label :transportation_allowance %>
+    <%= form.label :Asignación_de_movilización %>
     <%= form.number_field :transportation_allowance, id: :remuneration_transportation_allowance %>
   </div>
 
+  <br>
+  <h3>Descuentos - Legales</h3>
+
   <div class="field">
-    <%= form.label :non_tax_base %>
-    <%= form.number_field :non_tax_base, id: :remuneration_non_tax_base %>
+    <%= form.label :nombre_AFP %>
+    <%= form.number_field :pension_fund_discount, value: remuneration.calculate_pension_fund_discount, id: :remuneration_pension_fund_discount %>
   </div>
 
   <div class="field">
-    <%= form.label :total_legal_discount %>
-    <%= form.number_field :total_legal_discount, id: :remuneration_total_legal_discount %>
+    <%= form.label :nombre_Isapre %>
+    <%= form.number_field :health_discount, value: remuneration.calculate_health_plan_discount, id: :remuneration_health_discount %>
   </div>
 
   <div class="field">
-    <%= form.label :pension_fund_discount %>
-    <%= form.number_field :pension_fund_discount, id: :remuneration_pension_fund_discount %>
+    <%= form.label :seguro_de_cesantía %>
+    <%= form.number_field :unemployment_insurance, value: remuneration.calculate_unemployment_insurance_discount, id: :remuneration_unemployment_insurance %>
   </div>
 
   <div class="field">
-    <%= form.label :health_discount %>
-    <%= form.number_field :health_discount, id: :remuneration_health_discount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :unique_tax_discount %>
+    <%= form.label :Impuesto_único %>
     <%= form.number_field :unique_tax_discount, id: :remuneration_unique_tax_discount %>
   </div>
 
-  <div class="field">
-    <%= form.label :unemployment_insurance %>
-    <%= form.number_field :unemployment_insurance, id: :remuneration_unemployment_insurance %>
-  </div>
+  <br>
+  <h3>Otros Descuentos</h3>
 
   <div class="field">
-    <%= form.label :total_legal_discount %>
-    <%= form.number_field :total_legal_discount, id: :remuneration_total_legal_discount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :advance_payment_discount %>
+    <%= form.label :descuento_por_anticipo %>
     <%= form.number_field :advance_payment_discount, id: :remuneration_advance_payment_discount %>
   </div>
 
-  <div class="field">
-    <%= form.label :total_other_discount %>
-    <%= form.number_field :total_other_discount, id: :remuneration_total_other_discount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :total_asset %>
-    <%= form.number_field :total_asset, id: :remuneration_total_asset %>
-  </div>
-
-  <div class="field">
-    <%= form.label :total_discount %>
-    <%= form.number_field :total_discount, id: :remuneration_total_discount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :net_pay %>
-    <%= form.number_field :net_pay, id: :remuneration_net_pay %>
-  </div>
-
-  <div class="field">
+  <div style="display:none">
     <%= form.label :worker_id %>
     <%= form.text_field :worker_id, id: :remuneration_worker_id %>
   </div>
@@ -174,4 +149,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

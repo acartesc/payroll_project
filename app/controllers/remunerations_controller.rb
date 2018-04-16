@@ -22,6 +22,8 @@ class RemunerationsController < ApplicationController
 
   # GET /remunerations/1/edit
   def edit
+    @worker = Worker.find(params[:worker_id])
+    @remuneration.worker = @worker
   end
 
   # POST /remunerations
@@ -44,6 +46,7 @@ class RemunerationsController < ApplicationController
   # PATCH/PUT /remunerations/1
   # PATCH/PUT /remunerations/1.json
   def update
+
     respond_to do |format|
       if @remuneration.update(remuneration_params)
         format.html { redirect_to worker_remuneration_path(@remuneration.worker.id, @remuneration.id), notice: 'Remuneration was successfully updated.' }
