@@ -18,10 +18,10 @@ Rails.application.config.assets.precompile += %w(*.eot)
 Rails.application.config.assets.precompile += %w(*.svg)
 Rails.application.config.assets.precompile += %w(*.scss)
 
-Rails.application.config.assets.precompile += %w( *js )
-Rails.application.config.assets.precompile += %w( *json )
-Rails.application.config.assets.precompile += %w( *css )
+Rails.application.config.assets.precompile += %w( *.js )
+Rails.application.config.assets.precompile += %w( *.json )
+Rails.application.config.assets.precompile += %w( *.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( admin.js admin.css active_admin.scss)
+#Rails.application.config.assets.precompile += %w( admin.js admin.css active_admin.scss)
