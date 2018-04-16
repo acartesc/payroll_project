@@ -15,8 +15,8 @@
       <th>Mes</th>
       <th>Sueldo Base</th>
       <th>Total Haberes</th>
-      <th>Sueldo Líquido</th>
       <th>Total Descuentos</th>
+      <th>Sueldo Líquido</th>
       <th>Opciones</th>
     </tr>
   </thead>
@@ -25,10 +25,10 @@
     <% @remunerations.each do |remuneration| %>
       <tr>
         <td><%= months_to_string remuneration.month.month %> <%= remuneration.month.year%></td>
-        <td><%= remuneration.base_salary %></td>
-        <td><%= remuneration.total_asset %></td>
-        <td><%= remuneration.total_discount %></td>
-        <td><%= remuneration.net_pay %></td>
+        <td><%= number_with_delimiter(remuneration.base_salary) %></td>
+        <td><%= number_with_delimiter(remuneration.total_asset) %></td>
+        <td><%= number_with_delimiter(remuneration.total_discount) %></td>
+        <td><%= number_with_delimiter(remuneration.net_pay) %></td>
         <td><%= link_to 'Mostrar', worker_remuneration_path(remuneration.worker, remuneration) %>
         <%= link_to 'Editar', edit_worker_remuneration_path(remuneration.worker ,remuneration) %>
         <%= link_to 'Borrar', worker_remuneration_path(remuneration.worker, remuneration), method: :delete, data: { confirm: 'Are you sure?' } %></td>

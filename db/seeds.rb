@@ -22,9 +22,9 @@ family_burdens = FamilyBurden.create([{rut: '24.117.106-k', name: 'Agustina Cart
 
 base_salary = BaseSalary.create(amount: '1000000', worker_id: 1)
 
-health_plan = HealthPlan.create(name: 'Fonasa', deduction: 0.07, worker_id: 1)
+health_plan = HealthPlan.create(name: 'Fonasa', deduction: 7, worker_id: 1)
 
-pension_fund = PensionFund.create(name: 'Plan Vital', deduction: 0.1041, worker_id: 1)
+pension_fund = PensionFund.create(name: 'Plan Vital', deduction: 10.41, worker_id: 1)
 
 user = User.create(email: 'acartescc@gmail.com', password:'agus2012',password_confirmation: 'agus2012', role: 1)
 

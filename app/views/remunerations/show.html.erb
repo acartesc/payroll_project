@@ -1,6 +1,6 @@
 <% content_for :sidebar do %>
-      <%= render 'layouts/sidebars/sidebar_show_remuneration' %>
- <% end %>
+<%= render 'layouts/sidebars/sidebar_show_remuneration' %>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 
@@ -10,7 +10,7 @@
 
 </p>
 
-<table>
+<table class="table">
   <tr>
     <th>Empresa:</th>
     <th>Rut Empresa:</th>
@@ -23,7 +23,7 @@
 
 <br>
 
-<table>
+<table class="table">
   <tr>
     <th>Rut:</th>
     <th>Trabajador:</th>
@@ -36,7 +36,7 @@
 
 <br>
 
-<table>
+<table class="table">
   <tr>
     <th>AFP:</th>
     <th>Isapre:</th>
@@ -53,7 +53,7 @@
 
 <br>
 
-<table>
+<table class="table">
   <tr>
     <th>Dias Trabajados</th>
     <th>Horas Extras</th>
@@ -65,87 +65,87 @@
     <td><%= @remuneration.calculate_assistance %></td>
     <td><%= @remuneration.extra_hour %></td>
     <td><%= @remuneration.family_burden %></td>
-    <td><%= @remuneration.tax_base %></td>
-    <td><%= @remuneration.taxable %></td>
+    <td><%= number_with_delimiter(@remuneration.tax_base) %></td>
+    <td><%= number_with_delimiter(@remuneration.taxable) %></td>
   </tr>
 
 </table>
 
 <br>
 
-<table>
+<table class="table">
   <tr>
     <th colspan="2">Haberes</th>
     <th colspan="2">Descuentos</th>
   </tr>
   <tr>
     <td>Sueldo Base</td>
-    <td><%= @remuneration.base_salary %></td>
+    <td><%= number_with_delimiter(@remuneration.base_salary) %></td>
     <td>Previsión</td>
-    <td><%= @remuneration.pension_fund_discount %></td>
+    <td><%= number_with_delimiter(@remuneration.pension_fund_discount) %></td>
   </tr>
   <tr>
     <td>Horas Extra 50%</td>
-    <td><%= @remuneration.extra_hour %></td>
+    <td><%= number_with_delimiter(@remuneration.extra_hour) %></td>
     <td>Salud</td>
-    <td><%= @remuneration.health_discount %></td>
+    <td><%= number_with_delimiter(@remuneration.health_discount) %></td>
   </tr>
   <tr>
     <td>Gratificación Legal</td>
-    <td><%= @remuneration.legal_bonus %></td>
+    <td><%= number_with_delimiter(@remuneration.legal_bonus) %></td>
     <td>Impuesto Único</td>
-    <td><%= @remuneration.unique_tax_discount %></td>
+    <td><%= number_with_delimiter(@remuneration.unique_tax_discount) %></td>
   </tr>
   <tr>
     <td>Anticipos</td>
-    <td><%= @remuneration.advance_payment %></td>
+    <td><%= number_with_delimiter(@remuneration.advance_payment) %></td>
     <td>Seguro de Cesantía</td>
-    <td><%= @remuneration.unemployment_insurance %></td>
+    <td><%= number_with_delimiter(@remuneration.unemployment_insurance) %></td>
   </tr>
   <tr>
     <td>Otros Bonos</td>
-    <td><%= @remuneration.bonus %></td>
+    <td><%= number_with_delimiter(@remuneration.bonus) %></td>
     <td colspan="2"></td>
   </tr>
   <tr>
     <th>Total Imponible</th>
-    <td><%= @remuneration.tax_base %></td>
+    <td><%= number_with_delimiter(@remuneration.tax_base) %></td>
     <th>Total Descuentos Legales</th>
-    <td><%= @remuneration.total_legal_discount %></td>
+    <td><%= number_with_delimiter(@remuneration.total_legal_discount) %></td>
   </tr>
   <tr >
     <td colspan="4"></td>
   </tr>
   <tr>
     <td>Asginación de Colación</td>
-    <td><%= @remuneration.food_allowance %></td>
+    <td><%= number_with_delimiter(@remuneration.food_allowance) %></td>
     <td>Descuento por Anticipos</td>
-    <td><%= @remuneration.advance_payment_discount %></td>
+    <td><%= number_with_delimiter(@remuneration.advance_payment_discount) %></td>
   </tr>
   <tr>
     <td>Asginación de Movilización</td>
-    <td><%= @remuneration.transportation_allowance %></td>
+    <td><%= number_with_delimiter(@remuneration.transportation_allowance) %></td>
     <td colspan="2"></td>
   </tr>
   <tr>
     <th>Total No Imponible</th>
-    <td><%= @remuneration.non_tax_base %></td>
+    <td><%= number_with_delimiter(@remuneration.non_tax_base) %></td>
     <th>Total Otros Descuentos </th>
-    <td><%= @remuneration.total_other_discount %></td>
+    <td><%= number_with_delimiter(@remuneration.total_other_discount) %></td>
   </tr>
 </table>
 
 <p>
   <strong>Total Haberes:</strong>
-  <%= @remuneration.total_asset %>
+  <%= number_with_delimiter(@remuneration.total_asset) %>
 </p>
 
 <p>
   <strong>Total Descuentos:</strong>
-  <%= @remuneration.total_discount %>
+  <%= number_with_delimiter(@remuneration.total_discount) %>
 </p>
 
 <p>
   <strong>Sueldo Líquido::</strong>
-  <%= @remuneration.net_pay %>
+  <%= number_with_delimiter(@remuneration.net_pay) %>
 </p>
