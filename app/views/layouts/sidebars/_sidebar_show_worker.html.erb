@@ -8,4 +8,5 @@
   <%= link_to 'Agregar Carga Familiar', new_worker_family_burden_path(@worker.id), class: "w3-bar-item w3-button w3-hover-black" %>
   <%= link_to 'Remuneraciones Trabajador', worker_remunerations_path(@worker.id), class: "w3-bar-item w3-button w3-hover-black" %>
   <%= link_to "Volver a #{@worker.company.business_name}", company_path(@worker.company), class: "w3-bar-item w3-button w3-hover-black" %>
+  <%= link_to 'Volver Inicio', clients_path, class: "w3-bar-item w3-button w3-hover-black" %>
 </nav>

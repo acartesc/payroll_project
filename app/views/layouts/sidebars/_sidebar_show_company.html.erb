@@ -7,4 +7,5 @@
   <%= link_to "Editar #{@company.business_name}", edit_company_path(@company), class: "w3-bar-item w3-button w3-hover-black" %>
   <%= link_to 'Crear Trabajador', new_company_worker_path(@company), class: "w3-bar-item w3-button w3-hover-black" %>
   <%= link_to "Volver a #{@company.client.name}", client_path(@company.client), class: "w3-bar-item w3-button w3-hover-black" %>
+  <%= link_to 'Volver Inicio', clients_path, class: "w3-bar-item w3-button w3-hover-black" %>
 </nav>

@@ -6,4 +6,5 @@
   <h4 class="w3-bar-item"><b>Menu</b></h4>
   <%= link_to 'Edita Carga Familiar', edit_worker_family_burden_path(@family_burden), class: "w3-bar-item w3-button w3-hover-black" %>
   <%= link_to 'Volver',company_worker_path(@family_burden.worker.company.id, @family_burden.worker.id), class: "w3-bar-item w3-button w3-hover-black" %>
+  <%= link_to 'Volver Inicio', clients_path, class: "w3-bar-item w3-button w3-hover-black" %>
 </nav>
