@@ -1,3 +1,7 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_show_company' %>
+ <% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -9,14 +13,11 @@
   <%= @company.taxpayer_id_company %>
 </p>
 
-<%= link_to 'Editar', edit_company_path(@company) %>
-<%= link_to 'Volver', client_path(@company.client) %>
-
-<br>
 <br>
 
 <h2>Trabajadores</h2>
-<%= link_to 'Crear Trabajador', new_company_worker_path(@company) %>
+<br>
+
 <table id="myTable" class="table">
   <thead>
     <tr>

@@ -1,11 +1,15 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_index_remuneration' %>
+ <% end %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Liquidaciones</h1>
 <h2><%= @worker.first_name %> <%= @worker.last_name1 %> <%= @worker.last_name2 %></h2>
-<%= link_to 'Nueva Liquidación de Sueldo', new_worker_remuneration_path %>
+
 <br>
 <br>
-<table>
+<table id="myTable" class="table">
   <thead>
     <tr>
       <th>Mes</th>
@@ -13,7 +17,7 @@
       <th>Total Haberes</th>
       <th>Sueldo Líquido</th>
       <th>Total Descuentos</th>
-      <th colspan="3">Opciones</th>
+      <th>Opciones</th>
     </tr>
   </thead>
 
@@ -25,9 +29,9 @@
         <td><%= remuneration.total_asset %></td>
         <td><%= remuneration.total_discount %></td>
         <td><%= remuneration.net_pay %></td>
-        <td><%= link_to 'Mostrar', worker_remuneration_path(remuneration.worker, remuneration) %></td>
-        <td><%= link_to 'Editar', edit_worker_remuneration_path(remuneration.worker ,remuneration) %></td>
-        <td><%= link_to 'Borrar', worker_remuneration_path(remuneration.worker, remuneration), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', worker_remuneration_path(remuneration.worker, remuneration) %>
+        <%= link_to 'Editar', edit_worker_remuneration_path(remuneration.worker ,remuneration) %>
+        <%= link_to 'Borrar', worker_remuneration_path(remuneration.worker, remuneration), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

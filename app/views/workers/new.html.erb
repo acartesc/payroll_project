@@ -1,5 +1,7 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_new_worker' %>
+ <% end %>
+
 <h1>Nuevo Trabajador</h1>
 
 <%= render 'form', worker: @worker %>
-
-<%= link_to 'Back', company_path(@worker.company) %>

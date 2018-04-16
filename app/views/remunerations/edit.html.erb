@@ -1,5 +1,7 @@
-<h1>Editing Remuneration</h1>
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_new_remuneration' %>
+ <% end %>
+
+<h1>Editar Liquidación</h1>
 
 <%= render 'update', remuneration: @remuneration %>
-
-<%= link_to 'Volver', worker_remunerations_path %>

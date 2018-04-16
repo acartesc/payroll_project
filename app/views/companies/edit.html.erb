@@ -1,5 +1,7 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_new_company' %>
+ <% end %>
+
 <h1>Editar Compañía</h1>
 
 <%= render 'update', company: @company %>
-
-<%= link_to 'Volver', client_path(@company.client) %>

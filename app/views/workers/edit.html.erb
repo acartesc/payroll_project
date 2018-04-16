@@ -1,5 +1,7 @@
-<h1>Editar Datos Trabajador</h1>
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_new_worker' %>
+ <% end %>
 
-<%= link_to 'Volver', company_path(@worker.company) %>
+<h1>Editar Datos Trabajador</h1>
 
 <%= render 'update', worker: @worker %>

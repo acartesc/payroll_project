@@ -1,3 +1,7 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_show_remuneration' %>
+ <% end %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Liquidación de Sueldo</h1>
@@ -145,6 +149,3 @@
   <strong>Sueldo Líquido::</strong>
   <%= @remuneration.net_pay %>
 </p>
-
-<%= link_to 'Edit', edit_worker_remuneration_path(@remuneration.worker, @remuneration) %> |
-<%= link_to 'Back', worker_remunerations_path %>

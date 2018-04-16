@@ -1,5 +1,7 @@
-<h1>New Family Burden</h1>
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_new_familyburden' %>
+ <% end %>
+
+<h1>Nueva Carta Familiar</h1>
 
 <%= render 'form', family_burden: @family_burden %>
-
-<%= link_to 'Back', worker_family_burdens_path %>

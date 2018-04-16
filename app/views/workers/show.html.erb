@@ -1,11 +1,11 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_show_worker' %>
+ <% end %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Datos Trabajador</h1>
 
-
-<%= link_to 'Editar', edit_company_worker_path(@worker.company, @worker) %> |
-<%= link_to 'Volver', company_path(@worker.company) %>
-<br>
 <br>
 <table class="table">
   <tr>
@@ -44,6 +44,7 @@
 </tr>
   </table>
 
+<br>
 
 <h3>Cargas Familiares</h3>
 
@@ -55,7 +56,7 @@
       <th>Opciones</th>
     </tr>
   </thead>
-  <%= link_to 'Agregar Carga Familiar', new_worker_family_burden_path(@worker.id) %>
+
   <tbody>
     <% @worker.family_burdens.each do |family_burden| %>
       <tr>
@@ -68,8 +69,5 @@
     <% end %>
   </tbody>
 </table>
-
-<h3>Remuneraciones</h3>
-<%= link_to 'Historial de Remuneraciones', worker_remunerations_path(@worker.id) %>
 
 <br>

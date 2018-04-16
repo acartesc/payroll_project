@@ -1,3 +1,7 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_show_client' %>
+ <% end %>
+
 <p>
   <h1><%= @client.name %></h1>
 </p>
@@ -7,8 +11,6 @@
   <%= @client.client_rut %>
 </p>
 
-<%= link_to 'Editar', edit_client_path(@client) %> |
-<%= link_to 'Volver', clients_path %>
 <br>
 <br>
 
@@ -22,7 +24,7 @@
   </thead>
 
 <h2>Empresas</h2>
-<%= link_to 'Crear Empresa', new_client_company_path(@client) %>
+
   <tbody>
     <% @client.companies.each do |company| %>
       <tr>

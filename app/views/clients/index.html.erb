@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_clients' %>
+ <% end %>
 
 <h1>Clientes</h1>
 
-<br>
-<%= link_to 'Nuevo Cliente', new_client_path %>
-<br>
 <br>
 
 <table id="myTable" class="table">

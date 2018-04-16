@@ -1,3 +1,7 @@
+<% content_for :sidebar do %>
+      <%= render 'layouts/sidebars/sidebar_new_client' %>
+ <% end %>
+
 <h1>Editar Cliente</h1>
 
 <%= render 'form', client: @client %>
