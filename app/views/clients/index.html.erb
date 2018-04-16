@@ -16,9 +16,9 @@
       <tr>
         <td><%= client.client_rut %></td>
         <td><%= client.name %></td>
-        <td><%= link_to 'Show', client %>
-        <%= link_to 'Edit', edit_client_path(client) %>
-        <%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', client %>
+        <%= link_to 'Editar', edit_client_path(client) %>
+        <%= link_to 'Borrar', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,104 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Rut:</strong>
-  <%= @worker.rut %>
-</p>
+<h1>Datos Trabajador</h1>
 
-<p>
-  <strong>First name:</strong>
-  <%= @worker.first_name %>
-</p>
 
-<p>
-  <strong>Middle name:</strong>
-  <%= @worker.middle_name %>
-</p>
+<%= link_to 'Editar', edit_company_worker_path(@worker.company, @worker) %> |
+<%= link_to 'Volver', company_path(@worker.company) %>
+<br>
+<br>
+<table class="table">
+  <tr>
+    <th><h5>Datos Personales</h5></th>
+    <th><h5>Información de contacto</h5></th>
+  </tr>
+  <tr>
+    <td><strong>Rut:</strong> <%= @worker.rut %></td>
+    <td><strong>Email:</strong> <%= @worker.email %></td>
+  </tr>
+  <tr>
+    <td><strong>Primer nombre:</strong> <%= @worker.first_name %></td>
+    <td><strong>Phone:</strong> <%= @worker.phone %></td>
+  </tr>
 
-<p>
-  <strong>Last name1:</strong>
-  <%= @worker.last_name1 %>
-</p>
-
-<p>
-  <strong>Last name2:</strong>
-  <%= @worker.last_name2 %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @worker.birthdate %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @worker.gender %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @worker.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @worker.phone %>
-</p>
-
-<p>
-  <strong>Address region:</strong>
-  <%= @worker.address_region %>
-</p>
-
-<p>
-  <strong>Address city:</strong>
-  <%= @worker.address_city %>
-</p>
-
-<p>
-  <strong>Address street:</strong>
-  <%= @worker.address_street %>
-</p>
-
-<p>
-  <strong>Address number:</strong>
-  <%= @worker.address_number %>
-</p>
-
-<p>
-  <strong>Address apartment:</strong>
-  <%= @worker.address_apartment %>
-</p>
-
-<%= link_to 'Edit', edit_company_worker_path(@worker.company, @worker) %> |
-<%= link_to 'Back', company_path(@worker.company) %>
-
+  <tr>
+    <td><strong>Segundo nombre:</strong> <%= @worker.middle_name %></td>
+    <td><strong>Región:</strong> <%= @worker.address_region %></td>
+  </tr>
+  <tr>
+    <td><strong>Primer apellido:</strong> <%= @worker.last_name1 %></td>
+    <td><strong>Ciudad:</strong> <%= @worker.address_city %></td>
+  </tr>
+  <tr>
+    <td><strong>Segundo apellido:</strong> <%= @worker.last_name2 %></td>
+    <td><strong>Calle:</strong> <%= @worker.address_street %></td>
+  </tr>
+<tr>
+  <td><strong>Fechas de nacimiento:</strong> <%= @worker.birthdate %></td>
+  <td><strong>Número dirección:</strong> <%= @worker.address_number %></td>
+</tr>
+<tr>
+  <td>
+    <strong>Género:</strong> <%= @worker.gender %></td>
+    <td><strong>N° casa o depto:</strong> <%= @worker.address_apartment %></td>
+</tr>
+  </table>
 
 
 <h3>Cargas Familiares</h3>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Rut</th>
       <th>Name</th>
-      <th colspan="3"></th>
+      <th>Opciones</th>
     </tr>
   </thead>
-  <%= link_to 'Nueva Carga Familiar', new_worker_family_burden_path(@worker.id) %>
+  <%= link_to 'Agregar Carga Familiar', new_worker_family_burden_path(@worker.id) %>
   <tbody>
     <% @worker.family_burdens.each do |family_burden| %>
       <tr>
         <td><%= family_burden.rut %></td>
         <td><%= family_burden.name %></td>
-        <td><%= link_to 'Show', worker_family_burden_path(family_burden.worker, family_burden) %></td>
-        <td><%= link_to 'Edit', edit_worker_family_burden_path(family_burden.worker, family_burden) %></td>
-        <td><%= link_to 'Destroy', worker_family_burden_path(family_burden.worker, family_burden), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', worker_family_burden_path(family_burden.worker, family_burden) %>
+        <%= link_to 'Editar', edit_worker_family_burden_path(family_burden.worker, family_burden) %>
+        <%= link_to 'Borrar', worker_family_burden_path(family_burden.worker, family_burden), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Historial de Remuneraciones', worker_remunerations_path(@worker.id) %> 
+<h3>Remuneraciones</h3>
+<%= link_to 'Historial de Remuneraciones', worker_remunerations_path(@worker.id) %>
 
 <br>
