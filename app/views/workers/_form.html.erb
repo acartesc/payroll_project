@@ -125,7 +125,15 @@
     <div class="field">
       <%= of.label :'% de descuento' %>
       <%= of.number_field :deduction, class: :text_field, step: :any %>
-    </div>
+  </div>
+
+  <br>
+
+  <h3>Documentos Anexos</h3>
+
+  <div class="field">
+    <%= form.file_field :file, id: :file_field %>
+  </div>
 
   <% end %>
 

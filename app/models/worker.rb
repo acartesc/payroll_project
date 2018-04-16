@@ -29,4 +29,6 @@ class Worker < ApplicationRecord
     base_salary.amount
   end
 
+  mount_uploader :file, FileUploader
+
 end

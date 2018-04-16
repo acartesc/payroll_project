@@ -32,7 +32,6 @@
       <tr>
         <td><%= worker.rut %></td>
         <td><%= worker.first_name %> <%= worker.last_name1 %> <%= worker.last_name2 %></td>
-
         <td><%= link_to 'Mostrar', company_worker_path(worker.company, worker) %>
         <%= link_to 'Editar', edit_company_worker_path(worker.company, worker) %>
         <%= link_to 'Borrar', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>

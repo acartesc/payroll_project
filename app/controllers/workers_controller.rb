@@ -78,7 +78,7 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:rut, :first_name, :middle_name, :last_name1, :last_name2, :birthdate,:gender, :email, :phone, :address_region, :address_city, :address_street, :address_number, :address_apartment)
+      params.require(:worker).permit(:rut, :first_name, :middle_name, :last_name1, :last_name2, :birthdate,:gender, :email, :phone, :address_region, :address_city, :address_street, :address_number, :address_apartment, :file)
     end
 
     def health_plan_params

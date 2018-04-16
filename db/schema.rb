@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180414210043) do
+ActiveRecord::Schema.define(version: 20180416162719) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(version: 20180414210043) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
+    t.string "file"
     t.index ["company_id"], name: "index_workers_on_company_id"
   end
 
